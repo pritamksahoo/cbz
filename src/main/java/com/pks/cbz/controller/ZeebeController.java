@@ -1,6 +1,5 @@
 package com.pks.cbz.controller;
 
-import java.io.IOException;
 import java.nio.charset.Charset;
 
 import org.apache.commons.io.IOUtils;
@@ -27,8 +26,8 @@ public class ZeebeController
     @Value("${kafka-connect-zeebe.connectors.base-url}")
     private String zeebeKafkaConnectorUri;
 
-    @PostMapping("/connectors/deploy/source")
-    public ResponseEntity<Object> deploySourceConnector(@RequestParam("sourceFile") MultipartFile file)
+    @PostMapping("/connectors/deploy")
+    public ResponseEntity<Object> deploySourceConnector(@RequestParam("connectorConfig") MultipartFile file)
     {
         try {
             String sourceStr = new String(file.getBytes());
