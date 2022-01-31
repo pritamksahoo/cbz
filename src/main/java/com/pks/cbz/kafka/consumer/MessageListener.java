@@ -42,7 +42,7 @@ public class MessageListener {
             JSONObject response = new JSONObject();
             response.put("name", KAFKA_CONNECT_ZEEBE_SINK_DOMINOS_GLOBAL_REF);
             response.put("key", variables.getString("key"));
-            response.put("ttl", 10000);
+            response.put("ttl", 100000);
 
             System.out.println("respJson - " + response.toString());
 
@@ -63,7 +63,7 @@ public class MessageListener {
             JSONObject response = new JSONObject();
             response.put("name", KAFKA_CONNECT_ZEEBE_SINK_PIZZAHUT_GLOBAL_REF);
             response.put("key", variables.getString("key"));
-            response.put("ttl", 10000);
+            response.put("ttl", 100000);
 
             System.out.println("respJson - " + response.toString());
 
