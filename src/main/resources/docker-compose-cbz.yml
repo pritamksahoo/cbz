@@ -1,4 +1,4 @@
-version: '2.1'
+version: "2"
 
 services:
 
@@ -100,3 +100,37 @@ services:
       - schema-registry
       - kafka
       - connect
+
+  zeebe:
+    image: camunda/zeebe:1.2.1
+    hostname: zeebe
+    ports:
+      - 26500:26500
+      - 9600:9600
+    volumes:
+      - zeebe_data:/usr/local/zeebe/data
+      - ./zeebe.cfg.toml:/usr/local/zeebe/conf/zeebe.cfg.toml
+    depends_on:
+      - elasticsearch
+
+  operate:
+    image: camunda/operate:1.2.0
+    ports:
+      - 8080:8080
+    depends_on:
+      - elasticsearch
+
+  tasklist:
+    image: camunda/tasklist:1.2.0
+    ports:
+      - 8081:8080
+    depends_on:
+      - elasticsearch
+
+volumes:
+  zeebe_data:
+  zeebe_elasticsearch_data:
+
+# networks:
+#   cbz:
+#     driver: bridge
