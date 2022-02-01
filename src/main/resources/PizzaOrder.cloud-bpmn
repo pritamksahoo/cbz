@@ -72,6 +72,7 @@
         <zeebe:taskDefinition type="sendToApp" retries="1" />
         <zeebe:taskHeaders>
           <zeebe:header key="topic" value="kafka-request" />
+          <zeebe:header key="type" value="dominosOrder" />
         </zeebe:taskHeaders>
       </bpmn:extensionElements>
       <bpmn:incoming>Flow_1lntm21</bpmn:incoming>
@@ -96,6 +97,7 @@
         <zeebe:taskDefinition type="sendToApp" retries="1" />
         <zeebe:taskHeaders>
           <zeebe:header key="topic" value="kafka-request" />
+          <zeebe:header key="type" value="pizzaHutOrder" />
         </zeebe:taskHeaders>
       </bpmn:extensionElements>
       <bpmn:incoming>Flow_1gm9jjb</bpmn:incoming>

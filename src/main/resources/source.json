@@ -21,6 +21,7 @@
     "zeebe.client.job.pollinterval": "2000",
     "zeebe.client.job.timeout": "5000",
     "job.types": "sendToApp",
-    "job.header.topics": "topic"
+    "job.header.topics": "topic",
+    "job.header.type": "type"
   }
 }
